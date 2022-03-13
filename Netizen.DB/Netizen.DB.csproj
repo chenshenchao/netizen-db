@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFrameworks>net5.0;net6.0</TargetFrameworks>
+	  <IsPackable>true</IsPackable>
+	  <PackageId>Netizen.DB</PackageId>
+	  <Version>0.0.1</Version>
+	  <Authors>chenshenchao</Authors>
+	  <PackageLicenseFile>License</PackageLicenseFile>
+	  <PackageReadmeFile>Readme.md</PackageReadmeFile>
+	  <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<OutputPath>Targets/Binaries/Release</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<OutputPath>Targets/Binaries/Debug</OutputPath>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Remove="Targets\**" />
+		<EmbeddedResource Remove="Targets\**" />
+		<None Remove="Targets\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="../License" Pack="true" PackagePath="/" />
+		<None Include="../Readme.md" Pack="true" PackagePath="/" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Lucene.Net" Version="4.8.0-beta00016" />
+	  <PackageReference Include="Lucene.Net.Analysis.SmartCn" Version="4.8.0-beta00016" />
+	  <PackageReference Include="Netizen.ID" Version="0.0.2" />
+	  <PackageReference Include="Netizen.Text" Version="0.0.6" />
+	</ItemGroup>
+</Project>
